@@ -1,38 +1,32 @@
 package entidades;
 
-import java.util.ArrayList;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "professor")
 public class Professor {
 	
 	@Id
-	@GeneratedValue(generator="professor_seq", strategy=GenerationType.SEQUENCE)
-	@SequenceGenerator(name="professor_seq")
-	private Long id;
+	@Column(name = "id_prof")
+	private Integer id_professor;
 	private String cpf;
 	private int telefone;
-	
-	private ArrayList<Turma> turma;
+	private String nome;
+	private Integer disciplina;
+	private String professor;
+	private String turma;
+	private String aluno;
 
-	public ArrayList<Turma> getTurma() {
-		return turma;
+
+	public Integer getIdProfessor() {
+		return id_professor;
 	}
 
-	public void setTurma(ArrayList<Turma> turma) {
-		this.turma = turma;
-	}
-	public Long getId() {
-		return id;
-	}
-
-	
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdProfessor(Integer id_professor) {
+		this.id_professor = id_professor;
 	}
 
 	public String getCpf() {
@@ -51,23 +45,51 @@ public class Professor {
 		this.telefone = telefone;
 	}
 
-	public Professor(Long id, String cpf, int telefone, ArrayList<Turma> turma) {
-		super();
-		this.id = id;
-		this.cpf = cpf;
-		this.telefone = telefone;
-		this.turma = turma;
+	public String getNome() {
+		return nome;
 	}
 
-	public Professor() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Integer getDisciplina() {
+		return disciplina;
+	}
+
+	public void setDisciplina(Integer disciplina) {
+		this.disciplina = disciplina;
+	}
+
+	public String getProfessor() {
+		return professor;
+	}
+
+	public void setProfessor(String professor) {
+		this.professor = professor;
+	}
+
+	public String getAluno() {
+		return aluno;
+	}
+
+	public void setAluno(String aluno) {
+		this.aluno = aluno;
+	}
+	public String getTurma() {
+		return turma;
+	}
+
+	public void setTurma(String turma) {
+		this.turma = turma;
 	}
 
 	@Override
 	public String toString() {
-		return "Professor [id=" + id + ", cpf=" + cpf + ", telefone=" + telefone + ", turma=" + turma + "]";
+		return "Professor [idProfessor=" + id_professor + ", cpf=" + cpf + ", telefone=" + telefone + ", nome=" + nome
+				+ ", disciplina=" + disciplina + ", professor=" + professor + ", turma=" + turma + ", aluno=" + aluno
+				+ "]";
 	}
-	
 
+	
 }

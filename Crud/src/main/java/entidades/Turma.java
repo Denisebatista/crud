@@ -1,55 +1,41 @@
 package entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "turma")
 public class Turma {
 	
-	private Long id;
-	private String nome;
-	private Professor professor;
-	private Disciplina disciplina;
-	
-	public Long getId() {
-		return id;
+	@Id
+	@Column(name = "id_turma")
+	private Integer id_turma;
+
+	private String professor;
+	private Integer disciplina;
+	public Integer getId_turma() {
+		return id_turma;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setId_turma(Integer id_turma) {
+		this.id_turma = id_turma;
 	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public Professor getProfessor() {
+	public String getProfessor() {
 		return professor;
 	}
-	public void setProfessor(Professor professor) {
+	public void setProfessor(String professor) {
 		this.professor = professor;
 	}
-	public Disciplina getDisciplina() {
+	public Integer getDisciplina() {
 		return disciplina;
 	}
-	public void setDisciplina(Disciplina disciplina) {
+	public void setDisciplina(Integer disciplina) {
 		this.disciplina = disciplina;
 	}
-	
 	@Override
 	public String toString() {
-		return "Turma [id=" + id + ", nome=" + nome + ", professor=" + professor + ", disciplina=" + disciplina + "]";
+		return "Turma [id_turma=" + id_turma + ", professor=" + professor + ", disciplina=" + disciplina + "]";
 	}
-	
-	public Turma(Long id, String nome, Professor professor, Disciplina disciplina) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.professor = professor;
-		this.disciplina = disciplina;
-	}
-	
-	public Turma() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
 
 }

@@ -1,11 +1,15 @@
 package entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class Disciplina {
 	@Id
+	@Column(name = "id_disc")
+	private Integer id_disciplina;
 	private String nome;
-	private Long id;
 	private String professor;
 	public String getNome() {
 		return nome;
@@ -13,11 +17,11 @@ public class Disciplina {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Long getId() {
-		return id;
+	public Integer getIdDisciplina() {
+		return id_disciplina;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdDisciplina(Integer id_disciplina) {
+		this.id_disciplina = id_disciplina;
 	}
 	public String getProfessor() {
 		return professor;
@@ -25,19 +29,9 @@ public class Disciplina {
 	public void setProfessor(String professor) {
 		this.professor = professor;
 	}
-	public Disciplina(String nome, Long id, String professor) {
-		super();
-		this.nome = nome;
-		this.id = id;
-		this.professor = professor;
-	}
-	public Disciplina() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	@Override
 	public String toString() {
-		return "Disciplina [nome=" + nome + ", id=" + id + ", professor=" + professor + "]";
+		return "Disciplina [nome=" + nome + ", id=" + id_disciplina + ", professor=" + professor + "]";
 	}
 
 }

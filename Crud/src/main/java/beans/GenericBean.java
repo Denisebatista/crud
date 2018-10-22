@@ -3,14 +3,10 @@ package beans;
 import java.io.Serializable;
 import java.util.Collection;
 
-import javax.inject.Inject;
+import entidades.Identificavel;
+import services.Service;
 
-import br.edu.ifpb.esperanca.daw2.dao.DAO;
-import br.edu.ifpb.esperanca.daw2.ifoto.entities.Identificavel;
-import br.edu.ifpb.esperanca.daw2.services.Service;
-import entidades.Indentificavel;
-
-public abstract class GenericBean<E extends Indentificavel> implements Serializable{
+public abstract class GenericBean<E extends Identificavel> implements Serializable{
 
 	protected E entidade;
 	

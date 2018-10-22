@@ -1,5 +1,8 @@
 package services;
 
-public class PesistenciaDacException {
+public class PesistenciaDacException  extends Exception {
 
+	public PesistenciaDacException() {
+		super();
+	}
 }
